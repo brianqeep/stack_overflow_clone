@@ -1,5 +1,17 @@
 <h1><%= @question.question %></h1>
-<p><%= link_to "Delete Question", question_path(@question),
-                           :data => {:confirm => "You sure to Delete this questions?",
-                                     :method => "delete"} %></p>
+
   <p><%= link_to "Return to questions", questions_path %></p>
+  <p><%= link_to "New Answer", new_question_answer_path(@question, @answer) %></p>
+
+<% if @question.answers.any? %>
+
+    <ul>
+      <% @question.answers.each do |answer| %>
+        <li>
+          <%= answer.answer %> by <%= answer.name%><br>
+        </li><br> <hr>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no answers currently</p>
+  <% end %>

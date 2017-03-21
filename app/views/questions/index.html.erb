@@ -3,6 +3,6 @@
 <hr>
 <ul>
     <% @questions.each do |question| %>
-      <li><%= link_to question.question, question_path(question) %> by <%= question.name%></li>
-    <% end %><hr>
+      <li><%= link_to question.question, question_path(question) %> by <%= question.name%></li><br><hr><br>
+    <% end %>
   </ul>
