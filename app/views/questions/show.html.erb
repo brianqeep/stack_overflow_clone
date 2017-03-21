@@ -1,0 +1,5 @@
+<h1><%= @question.question %></h1>
+<p><%= link_to "Delete Question", question_path(@question),
+                           :data => {:confirm => "You sure to Delete this questions?",
+                                     :method => "delete"} %></p>
+  <p><%= link_to "Return to questions", questions_path %></p>
